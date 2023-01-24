@@ -9,7 +9,7 @@ key = os.urandom(16)
 plaintext = b"hello world"
 
 # Initialize AES-GCM cipher
-cipher = Cipher(algorithms.AES(key), modes.GCM(b'\x00' * 12), backend=default_backend())
+cipher = Cipher(algorithms.AES(key), modes.GCM(b'\x00' * 12), backend=openssl.backend)
 encryptor = cipher.encryptor()
 
 # Encrypt the data
