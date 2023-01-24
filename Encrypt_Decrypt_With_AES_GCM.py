@@ -32,10 +32,6 @@ try:
 except Exception as e:
     print("The ciphertext has been tampered with or the sender is not authentic.")
 
-# print(decryptor.update(ciphertext).decode())
 # Decrypt the message    
-# plaintext = decryptor.update(ciphertext) + decryptor.finalize(decryptor.tag)
-# # tag = decryptor.tag
-
-
-# print(plaintext) # b"This is a secret message."
+plaintext = decryptor.update(ciphertext) + decryptor.finalize(tag)
+print(plaintext) # b"This is a secret message."
